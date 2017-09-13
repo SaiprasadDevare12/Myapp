@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adno: 1
+  name: MyString
+  gender: MyString
+  standard: MyString
+
+two:
+  adno: 1
+  name: MyString
+  gender: MyString
+  standard: MyString

@@ -1,0 +1,2 @@
+class Curd < ApplicationRecord
+end

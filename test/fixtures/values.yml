@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ad_no: 1
+  name: MyString
+  gender: MyString
+  class: MyString
+
+two:
+  ad_no: 1
+  name: MyString
+  gender: MyString
+  class: MyString

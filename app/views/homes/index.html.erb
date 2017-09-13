@@ -1,0 +1,21 @@
+
+
+<%= form_for :welcome do |f|%><br><br><br>
+	<div class="navbar navbar-dark fixed-top bg-dark">
+	<h1 class = "color_red"><%= @title %></h1>
+		<br><p>
+		<center>	<label>USERNAME</label>
+					&nbsp&nbsp<%= f.text_field :username%>
+		</p>
+
+		<p>
+					<label >PASSWORD</label>
+					&nbsp&nbsp&nbsp<%= f.password_field:password%>
+		</p>
+
+		<p>
+					<%= link_to "LOGIN" , "registration"%>
+		</p>
+		</center>
+	</div>
+<%end%>

@@ -1,0 +1,34 @@
+<center><h1 class="color_red"><%=@title%></h1></center>
+
+<%= form_for :@insertion, url:{action: "create"},html: {class:"form"} do |f|%>
+
+	<center><div class="jumbotron">
+	       <table cellpadding="10px">
+		     <tr>
+			    <td><label>ADMISSION NUMBER</label></td>&nbsp&nbsp 
+				<td><%= f.text_field :adno%></td>
+			</tr>	
+				
+			<tr>
+			    <td><label>NAME</label></td>&nbsp&nbsp
+				<td><%= f.text_field :name%></td>
+				
+			</tr>
+				 
+			 <tr>
+				<td><label>GENDER</label></td>&nbsp&nbsp
+				<td><%= f.select :gender, options_for_select([["Male","M"], ["Female","F"], ["Other","O"]])%><br><br></td>
+			</tr>
+			
+			<tr>
+				<td><label>STANDARD</label></td>&nbsp&nbsp
+			    <td><%= f.select :standard, options_for_select([["Class V","fifth"], ["Class VI","sixth"], ["Class VII","seventh"],["Class VIII","eight"], ["Class IX","nineth"], ["Class X","tenth"]])%><br><br></td>
+			</tr>
+			
+					 
+		</table>
+		
+		<%= link_to "CONFIRM/UPDATE","curds#create"%>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "CANCEL","registration"%>
+	</div></center>
+<% end %>

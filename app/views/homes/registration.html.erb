@@ -1,0 +1,19 @@
+
+<center><h1 class = "color_red"><%=@title%></h1></center>
+<%= form_for :welcome do |f|%><br><br><br>
+<div class ="cen">
+
+	<center><table border=1>
+		<tr>
+			<td colspan="2"><label>NEW STUDENT ENTRY</label></td>
+			<td><%= link_to "ENTRY" , "new"%></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><label>VIEW STUDENT DETAILS</label></td>
+			<td><%= link_to  "VIEW_ENTRY" , "show_all"%></td>
+		</tr>
+
+		</table></center>
+</div>
+<%end%>

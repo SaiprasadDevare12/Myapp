@@ -1,0 +1,27 @@
+<center><h1 class = "color_red"><%= @title%></h1></center>
+<% @view.each do |v|%>
+<div class="jumbotron">
+
+ <center><table border =1>
+  <tr>
+   <td>ADMISSION NUMBER</td>
+   <td>NAME</td>
+   <td>GENDER</td>
+   <td>STANDARD</td>
+   </tr>
+   
+       
+	   
+   <tr>
+   <td><%= v.adno%></td>&nbsp&nbsp
+   <td><%= v.name%></td>
+   <td><%= v.gender%></td>
+   <td><%= v.standard%></td>
+   </tr><br>
+  
+</table>
+   <%=link_to "Edit","edit"%>
+   <%=link_to "Delete" , "delete"%>
+</center></div>  
+</center></div>  
+  <% end %>
