@@ -1,40 +1,50 @@
 class CurdsController < ApplicationController
   
   def index
-    @title =" VIEW STUDENT DETAIL PAGE"
+    @title =" VIEW STUDENT DETAILS PAGE"
     @view = Curd.all
+   end 
+ 
+  def show   
+    @view = Curd.find(params[:id])
   end 
 
   def create
-    @insertion = Curd.new(data_insert)
-    if @insertion.save
-       redirect_to action:"index"
-    else
-       render action:"new"
+      curd = Curd.new(data_params)
+
+      if curd.save
+         redirect_to curds_path(curd)
+      else
+      	 redirect_to new_curd_path
+      end    
+  end
+  
+  def new
+     @view = Curd.new
+  end
+
+   def edit
+   	@view = Curd.find(params[:id])
+   end
+
+  def update
+     @view = Curd.find(params[:id])
+     if @view.update_attributes(data_params)
+           redirect_to curds_path
+     else
+     	   render "edit"
      end
   end
 
-  def new
-
-  end
-  
-  def edit
-
-  end
-
-  def show
-   
-  end 
-
-  def update
-
-  end
-
   def destroy
-
+  		@view = Curd.find(params[:id])
+  		@view.destroy
+  		redirect_to curds_path 
   end
 
-  def data_insert
-    params.require(:curd).permit(:adno, :name, :gender, :standard)
-  end
+  private
+     def data_params
+        params.require(:curd).permit(:adno, :name, :gender, :standard)
+     end
+ 
 end

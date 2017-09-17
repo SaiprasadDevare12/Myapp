@@ -13,3 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 Rails.application.config.assets.precompile += %w(home_style.css )
 Rails.application.config.assets.precompile += %w(curds.scss)
+Rails.application.config.assets.precompile += %w(table.css)

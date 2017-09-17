@@ -1,9 +1,11 @@
 <center><h1 class = "color_red"><%= @title%></h1></center>
+<%= link_to "BACK TO CONTENT",registration_path %>
 <% @view.each do |v|%>
 <div class="jumbotron">
-
- <center><table border =1>
+ 
+ <center><table border = "3px", cellspacing = "10px", cellpadding="10px">
   <tr>
+   
    <td>ADMISSION NUMBER</td>
    <td>NAME</td>
    <td>GENDER</td>
@@ -12,16 +14,19 @@
   
 
    <tr>
-   <td><%= v.adno%></td>&nbsp&nbsp
-   <td><%= v.name%></td>
-   <td><%= v.gender%></td>
-   <td><%= v.standard%></td>
-   </tr><br>
-  
-</table>
+   <td><%= v.adno %></td>&nbsp&nbsp
+   <td><%= v.name %></td>
+   <td><%= v.gender %></td>
+   <td><%= v.standard %></td>
+   </tr>
+        
+   </tr>
 
-   <%=link_to "Edit","edit"%>
-   <%=link_to "Delete" , "delete"%>
-</center></div>  
-</center></div>  
-  <% end %>
+   <table>
+     <br><tr><%= link_to "Edit",edit_curd_path(v)%></tr>&nbsp&nbsp&nbsp&nbsp
+      <tr><%= link_to "Delete", v , :Confirm => "Are you want to Delete",:method => :delete%></tr>
+   </table>
+
+</table>
+</center></div>   
+  <% end %> 

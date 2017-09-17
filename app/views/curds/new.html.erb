@@ -1,6 +1,6 @@
 <center><h1 class="color_red"><%=@title%></h1></center>
 
-<%= form_for :@insertion, url:{action: "create"},html: {class:"form"} do |f|%>
+<%= form_for(@view) do |f|%>
 
 	<center><div class="jumbotron">
 	       <table cellpadding="10px">
@@ -17,18 +17,18 @@
 				 
 			 <tr>
 				<td><label>GENDER</label></td>&nbsp&nbsp
-				<td><%= f.select :gender, options_for_select([["Male","M"], ["Female","F"], ["Other","O"]])%><br><br></td>
+				<td><%= f.select :gender, options_for_select([["MALE","Male"], ["FEMALE","Female"], ["OTHER","Other"]],selected: f.object.gender)%><br><br></td>
 			</tr>
 			
 			<tr>
 				<td><label>STANDARD</label></td>&nbsp&nbsp
-			    <td><%= f.select :standard, options_for_select([["Class V","fifth"], ["Class VI","sixth"], ["Class VII","seventh"],["Class VIII","eight"], ["Class IX","nineth"], ["Class X","tenth"]])%><br><br></td>
+			    <td><%= f.select :standard, options_for_select([["Class V","Fifth"], ["Class VI","Sixth"], ["Class VII","Seventh"],["Class VIII","Eight"], ["Class IX","Nineth"], ["Class X","Tenth"]],selected: f.object.standard)%><br><br></td>
 			</tr>
 			
 					 
 		</table>
 		
-		<%= link_to "CONFIRM/UPDATE","curds#create"%>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "CANCEL","registration"%>
+		<%= f.submit "CONFIRM/UPDATE"%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<%= link_to "CANCEL", registration_path%>
 	</div></center>
 <% end %>
